@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Student Management REST API
 
 Spring Boot + Spring Data JPA + MySQL project implementing CRUD operations for student records.
@@ -42,3 +43,7 @@ Model       -> Student entity mapped to MySQL table
 - **Dependency Injection**: Constructor injection (`@Autowired` on constructor) used instead of field injection — easier to unit test and avoids null dependencies.
 - **Validation**: `@Valid` + `@NotBlank`/`@Email` on the entity ensures bad data is rejected before hitting the database.
 - **Exception handling**: `@RestControllerAdvice` centralizes error responses (e.g. 404 when a student ID doesn't exist) instead of scattering try/catch in the controller.
+=======
+# student-management-system
+Java Developer passionate about building scalable REST APIs using Spring Boot and MySQL. Currently learning backend development and creating real-world projects.
+>>>>>>> 11b7043b55f34df27c23110014db80baa9468fb7
