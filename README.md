@@ -1,33 +1,52 @@
-<<<<<<< HEAD
 # Student Management REST API
 
-Spring Boot + Spring Data JPA + MySQL project implementing CRUD operations for student records.
+A RESTful API built using Java, Spring Boot, Spring Data JPA, and MySQL to manage student records through CRUD operations.
 
-## Architecture
-```
-Controller  -> handles HTTP requests/responses
-Service     -> business logic
-Repository  -> data access (Spring Data JPA)
-Model       -> Student entity mapped to MySQL table
-```
+## 🚀 Features
 
-## How to run
-1. Create a MySQL database (or let `createDatabaseIfNotExist=true` do it automatically).
-2. Update `src/main/resources/application.properties` with your MySQL username/password.
-3. Run: `mvn spring-boot:run`
-4. API available at `http://localhost:8080/api/students`
+* Create a student record
+* Retrieve all students
+* Retrieve a student by ID
+* Update student details
+* Delete a student record
+* Validate incoming requests
+* Handle exceptions centrally
 
-## Endpoints (test these in Postman)
+## 🛠️ Technologies Used
 
-| Method | Endpoint              | Description          |
-|--------|-----------------------|-----------------------|
-| GET    | /api/students         | Get all students      |
-| GET    | /api/students/{id}    | Get one student       |
-| POST   | /api/students         | Create a student      |
-| PUT    | /api/students/{id}    | Update a student      |
-| DELETE | /api/students/{id}    | Delete a student      |
+* Java
+* Spring Boot
+* Spring Data JPA
+* Hibernate
+* MySQL
+* Maven
+* Postman
 
-### Sample POST body
+## 🏗️ Architecture
+
+The application follows a layered architecture:
+
+* **Controller:** Handles HTTP requests and responses.
+* **Service:** Contains business logic.
+* **Repository:** Handles database operations using Spring Data JPA.
+* **Model:** Represents student data through the Student entity.
+
+## 📌 API Endpoints
+
+Base URL: `http://localhost:8080/api/students`
+
+| Method | Endpoint             | Description              |
+| ------ | -------------------- | ------------------------ |
+| GET    | `/api/students`      | Retrieve all students    |
+| GET    | `/api/students/{id}` | Retrieve a student by ID |
+| POST   | `/api/students`      | Create a student         |
+| PUT    | `/api/students/{id}` | Update a student         |
+| DELETE | `/api/students/{id}` | Delete a student         |
+
+## 📝 Sample Request
+
+Example JSON for creating a student:
+
 ```json
 {
   "name": "Arun Kumar",
@@ -37,13 +56,50 @@ Model       -> Student entity mapped to MySQL table
 }
 ```
 
-## Interview talking points
-- **Layered architecture**: Controller → Service → Repository keeps concerns separated and code testable.
-- **Spring Data JPA**: `JpaRepository<Student, Long>` auto-generates CRUD SQL — no manual queries needed.
-- **Dependency Injection**: Constructor injection (`@Autowired` on constructor) used instead of field injection — easier to unit test and avoids null dependencies.
-- **Validation**: `@Valid` + `@NotBlank`/`@Email` on the entity ensures bad data is rejected before hitting the database.
-- **Exception handling**: `@RestControllerAdvice` centralizes error responses (e.g. 404 when a student ID doesn't exist) instead of scattering try/catch in the controller.
-=======
-# student-management-system
-Java Developer passionate about building scalable REST APIs using Spring Boot and MySQL. Currently learning backend development and creating real-world projects.
->>>>>>> 11b7043b55f34df27c23110014db80baa9468fb7
+Use the actual field names defined in your Student entity when testing the API.
+
+## ⚙️ How to Run
+
+### Prerequisites
+
+* Java JDK
+* Maven
+* MySQL Server
+* IntelliJ IDEA or another Java IDE
+
+### Steps
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Selva6383/student-management-system.git
+   ```
+
+2. Open the project in your IDE.
+
+3. Configure the MySQL username, password, and database settings in `src/main/resources/application.properties`.
+
+4. Start MySQL.
+
+5. Run the application:
+
+   ```bash
+   mvn spring-boot:run
+   ```
+
+6. Test the API endpoints using Postman.
+
+## 🧪 Key Technical Concepts
+
+* **Layered Architecture:** Separates controllers, services, and repositories.
+* **Spring Data JPA:** Simplifies database operations.
+* **Dependency Injection:** Connects application components.
+* **Validation:** Uses request validation to help prevent invalid data.
+* **Exception Handling:** Centralizes error handling for API requests.
+
+## 👨‍💻 Author
+
+**Selvaganapathy S**
+
+GitHub: [Selva6383](https://github.com/Selva6383)
+
